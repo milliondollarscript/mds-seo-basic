@@ -1,0 +1,308 @@
+.mds-seo-admin {
+    --mds-seo-border: var(--mds3-admin-border, #cbd5e1);
+    --mds-seo-muted: var(--mds3-admin-muted, #526172);
+    --mds-seo-surface: var(--mds3-admin-surface, #ffffff);
+    --mds-seo-soft: var(--mds3-admin-surface-subtle, #f8fafc);
+    --mds-seo-warning-bg: #fff8e6;
+    --mds-seo-warning-fg: #5f4300;
+    --mds-seo-warning-border: #d99b18;
+    --mds-seo-success-bg: #ecfdf3;
+    --mds-seo-success-fg: #166534;
+    --mds-seo-success-border: #86c99d;
+    --mds-seo-error-bg: #fff1f2;
+    --mds-seo-error-fg: #9f1239;
+    --mds-seo-error-border: #fda4af;
+}
+
+.mds-seo-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 18px;
+}
+
+.mds-seo-panel {
+    min-width: 0;
+}
+
+.mds-seo-panel > :first-child,
+.mds-seo-panel__heading h2 {
+    margin-top: 0;
+}
+
+.mds-seo-panel__heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.mds-seo-panel__heading p {
+    margin-bottom: 0;
+}
+
+.mds-seo-notice {
+    max-width: 1100px;
+    margin: 16px 0;
+    padding: 14px 16px;
+    border: 1px solid;
+    border-left-width: 4px;
+    border-radius: 4px;
+}
+
+.mds-seo-notice p {
+    margin: 5px 0 0;
+}
+
+.mds-seo-notice--warning {
+    color: var(--mds-seo-warning-fg);
+    background: var(--mds-seo-warning-bg);
+    border-color: var(--mds-seo-warning-border);
+}
+
+.mds-seo-toggle-row {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    margin: 0;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--mds-seo-border);
+}
+
+.mds-seo-toggle-row input {
+    margin: 2px 0 0;
+}
+
+.mds-seo-toggle-row span,
+.mds-seo-noindex-row span {
+    min-width: 0;
+}
+
+.mds-seo-toggle-row strong,
+.mds-seo-toggle-row small,
+.mds-seo-noindex-row strong,
+.mds-seo-noindex-row small {
+    display: block;
+}
+
+.mds-seo-toggle-row small,
+.mds-seo-noindex-row small {
+    margin-top: 3px;
+    color: var(--mds-seo-muted);
+    line-height: 1.45;
+}
+
+.mds-seo-toggle-row--advanced {
+    margin-top: 14px;
+    padding: 12px;
+    border: 1px solid var(--mds-seo-warning-border);
+    border-radius: 4px;
+    background: var(--mds-seo-warning-bg);
+}
+
+.mds-seo-fieldset {
+    margin: 12px 0 0;
+    padding: 0;
+    border: 0;
+}
+
+.mds-seo-fieldset--nested {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin: 16px 0;
+    padding: 14px;
+    border: 1px solid var(--mds-seo-border);
+    border-radius: 4px;
+    background: var(--mds-seo-soft);
+}
+
+.mds-seo-fieldset--nested legend {
+    padding: 0 6px;
+    font-weight: 600;
+}
+
+.mds-seo-status {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    min-height: 24px;
+    padding: 2px 9px;
+    border: 1px solid var(--mds-seo-border);
+    border-radius: 999px;
+    color: var(--mds3-admin-text, #334155);
+    background: var(--mds-seo-soft);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.mds-seo-status--success {
+    color: var(--mds-seo-success-fg);
+    background: var(--mds-seo-success-bg);
+    border-color: var(--mds-seo-success-border);
+}
+
+.mds-seo-sitemap-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.mds-seo-sitemap-link code {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.mds-seo-ajax-status {
+    min-height: 22px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.mds-seo-ajax-status.is-success,
+.mds-seo-ajax-status.is-error,
+.mds-seo-ajax-status.is-pending {
+    padding: 10px 12px;
+    border: 1px solid var(--mds-seo-border);
+    border-radius: 4px;
+    background: var(--mds-seo-soft);
+}
+
+.mds-seo-ajax-status.is-success {
+    color: var(--mds-seo-success-fg);
+    background: var(--mds-seo-success-bg);
+    border-color: var(--mds-seo-success-border);
+}
+
+.mds-seo-ajax-status.is-error {
+    color: var(--mds-seo-error-fg);
+    background: var(--mds-seo-error-bg);
+    border-color: var(--mds-seo-error-border);
+}
+
+.mds-seo-steps {
+    margin-bottom: 0;
+}
+
+.mds-seo-meta-box__intro {
+    margin-top: 0;
+    color: var(--mds-seo-muted);
+}
+
+.mds-seo-form-field {
+    margin: 0 0 18px;
+}
+
+.mds-seo-form-field label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.mds-seo-media-field {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 8px;
+    align-items: center;
+}
+
+.mds-seo-image-preview {
+    display: block;
+    width: min(320px, 100%);
+    max-height: 180px;
+    margin-top: 10px;
+    border: 1px solid var(--mds-seo-border);
+    border-radius: 4px;
+    object-fit: contain;
+    background: var(--mds-seo-soft);
+}
+
+.mds-seo-noindex-row {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    padding: 14px;
+    border: 1px solid var(--mds-seo-border);
+    border-radius: 4px;
+    background: var(--mds-seo-soft);
+}
+
+.mds-seo-noindex-row input {
+    margin-top: 2px;
+}
+
+body.mds3-admin-theme-dark .mds-seo-admin {
+    --mds-seo-warning-bg: #392d0a;
+    --mds-seo-warning-fg: #fde68a;
+    --mds-seo-warning-border: #ca8a04;
+    --mds-seo-success-bg: #123521;
+    --mds-seo-success-fg: #bbf7d0;
+    --mds-seo-success-border: #22834b;
+    --mds-seo-error-bg: #451a24;
+    --mds-seo-error-fg: #fecdd3;
+    --mds-seo-error-border: #be123c;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.mds3-admin-theme-system .mds-seo-admin {
+        --mds-seo-border: #475569;
+        --mds-seo-muted: #cbd5e1;
+        --mds-seo-soft: #1f2937;
+        --mds-seo-warning-bg: #392d0a;
+        --mds-seo-warning-fg: #fde68a;
+        --mds-seo-warning-border: #ca8a04;
+        --mds-seo-success-bg: #123521;
+        --mds-seo-success-fg: #bbf7d0;
+        --mds-seo-success-border: #22834b;
+        --mds-seo-error-bg: #451a24;
+        --mds-seo-error-fg: #fecdd3;
+        --mds-seo-error-border: #be123c;
+    }
+}
+
+/* Forced MDS theme (same palette as the system block above). */
+
+    body.mds3-admin-theme-dark .mds-seo-admin {
+        --mds-seo-border: #475569;
+        --mds-seo-muted: #cbd5e1;
+        --mds-seo-soft: #1f2937;
+        --mds-seo-warning-bg: #392d0a;
+        --mds-seo-warning-fg: #fde68a;
+        --mds-seo-warning-border: #ca8a04;
+        --mds-seo-success-bg: #123521;
+        --mds-seo-success-fg: #bbf7d0;
+        --mds-seo-success-border: #22834b;
+        --mds-seo-error-bg: #451a24;
+        --mds-seo-error-fg: #fecdd3;
+        --mds-seo-error-border: #be123c;
+    }
+
+
+@media (max-width: 900px) {
+    .mds-seo-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .mds-seo-panel__heading,
+    .mds-seo-sitemap-link {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .mds-seo-status {
+        align-self: flex-start;
+    }
+
+    .mds-seo-media-field {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mds-seo-media-field .button,
+    .mds-seo-media-field .button-link-delete {
+        justify-self: start;
+    }
+}

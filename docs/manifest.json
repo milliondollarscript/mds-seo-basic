@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "package": "mds-seo-basic",
+  "type": "extension",
+  "version": "1.1.0",
+  "channel": "main",
+  "title": "SEO Basic",
+  "docs": [
+    {
+      "id": "usage",
+      "title": "SEO Basic",
+      "file": "USAGE.md",
+      "audience": ["admin", "support", "developer", "legal-review"],
+      "topics": ["settings", "grids", "performance", "troubleshooting", "privacy", "legal", "extensions"]
+    }
+  ]
+}
