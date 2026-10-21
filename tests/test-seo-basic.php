@@ -26,10 +26,23 @@ class MDS_SEO_Basic_Tests extends WP_UnitTestCase {
     }
 
     public function test_version_and_hooks_are_current(): void {
-        $this->assertSame('1.1.0', MDS_SEO_BASIC_VERSION);
+        // The package must describe itself with one version. A pinned literal breaks on
+        // every release and misses the failure that matters - a bump that updates the
+        // plugin header and leaves MDS_SEO_BASIC_VERSION (which the assets and the
+        // self-check payload use) on the previous number.
+        $header = $this->plugin_header_version(dirname(__DIR__) . '/mds-seo-basic.php');
+        $this->assertNotFalse($header, 'the plugin header version could not be read');
+        $this->assertSame($header, MDS_SEO_BASIC_VERSION, 'plugin header and version constant disagree');
         $this->assertNotFalse(has_filter('pre_get_document_title', [$this->extension, 'filter_document_title']));
         $this->assertNotFalse(has_filter('get_canonical_url', [$this->extension, 'filter_canonical_url']));
         $this->assertNotFalse(has_filter('wp_robots', [$this->extension, 'filter_robots']));
+    }
+
+    /** The Version: line of a plugin file header. */
+    private function plugin_header_version(string $file)
+    {
+        $src = (string) file_get_contents($file);
+        return preg_match('/^[ \t]*\*[ \t]*Version:[ \t]*(\S+)/m', $src, $m) ? $m[1] : false;
     }
 
     public function test_settings_sanitizer_only_accepts_known_boolean_fields(): void {

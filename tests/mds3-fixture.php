@@ -29,8 +29,12 @@ $conflict_filter = static function ($plugins) {
 };
 
 try {
-    if ('1.1.0' !== MDS_SEO_BASIC_VERSION) {
-        throw new RuntimeException('SEO Basic version metadata is stale.');
+    // The package's own version must be one number: compare the constant with the
+    // plugin header instead of a literal, so this still means something after a bump
+    // and catches the bump that moved one file and not the other.
+    $header_src = (string) file_get_contents(dirname(__DIR__) . '/mds-seo-basic.php');
+    if (!preg_match('/^[ \t]*\*[ \t]*Version:[ \t]*(\S+)/m', $header_src, $header_version) || $header_version[1] !== MDS_SEO_BASIC_VERSION) {
+        throw new RuntimeException('SEO Basic version metadata is stale: the plugin header and MDS_SEO_BASIC_VERSION disagree.');
     }
 
     wp_set_current_user(1);
