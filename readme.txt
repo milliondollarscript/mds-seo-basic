@@ -2,7 +2,7 @@
 Contributors: milliondollarscript
 Tags: seo, sitemap, structured data, social cards, sponsor wall
 Requires at least: 6.0
-Tested up to: 7.1
+Tested up to: 7.1.3
 Requires PHP: 8.1
 Stable tag: 1.1.0
 License: GPLv2 or later
