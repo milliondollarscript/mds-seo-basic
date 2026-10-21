@@ -3,7 +3,7 @@
  * Plugin Name: Million Dollar Script - SEO Basic
  * Plugin URI: https://milliondollarscript.com/extensions/seo-basic
  * Description: Search metadata, social cards, structured data, and scalable sitemaps for Million Dollar Script sites.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Million Dollar Script
  * Author URI: https://milliondollarscript.com
  * License: GPL v2 or later
